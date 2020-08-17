@@ -4,6 +4,7 @@ import uuid
 from django.test import TestCase
 from django.db import models as dj_models
 
+from google.protobuf.any_pb2 import Any
 from google.protobuf.timestamp_pb2 import Timestamp
 from google.protobuf.descriptor import FieldDescriptor
 
@@ -181,7 +182,7 @@ class ProtoBufConvertingTest(TestCase):
             bytes_field=b'123',
             bool_field=True,
             uuid_field=str(uuid.uuid4()),
-
+            any_field=Any(),
             enum_field=1,
             timestamp_field=timestamp,
             repeated_uint32_field=[1, 2, 3],
